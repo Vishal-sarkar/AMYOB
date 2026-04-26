@@ -122,11 +122,11 @@ export default function App() {
               <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply opacity-50 blur-3xl"></div>
               <div className="absolute bottom-10 left-0 w-72 h-72 bg-sky-100 rounded-3xl rotate-12 mix-blend-multiply opacity-50 blur-3xl"></div>
               
-              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
+              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
                 <img 
-                  src="https://images.unsplash.com/photo-1524178232363-1fb28f74b573?auto=format&fit=crop&q=80&w=2000" 
-                  alt="Representative student engagement" 
-                  className="w-full h-full object-cover" 
+                  src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
+                  alt="Students collaborating" 
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -174,42 +174,64 @@ export default function App() {
 
       {/* Mission Section */}
       <section id="mission" className="py-32 px-12 bg-slate-50">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
-          <div className="relative order-2 lg:order-1">
-            <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
-              <img 
-                src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=1200" 
-                alt="Library setting" 
-                className="w-full h-full object-cover grayscale opacity-90" 
-                referrerPolicy="no-referrer"
-              />
+        <div className="max-w-7xl mx-auto border-b border-slate-200 pb-20 mb-20">
+          <div className="grid lg:grid-cols-2 gap-24 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+                <img 
+                  src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1200" 
+                  alt="Student collaboration" 
+                  className="w-full h-full object-cover grayscale opacity-90" 
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              <div className="absolute inset-0 bg-brand-navy/10 rounded-3xl z-20"></div>
             </div>
-            <div className="absolute inset-0 bg-brand-navy/10 rounded-3xl z-20"></div>
+            
+            <div className="order-1 lg:order-2">
+               <div className="mb-6 inline-flex items-center px-4 py-1.5 rounded-full bg-white text-brand-navy text-[10px] font-bold uppercase tracking-[0.2em] border border-slate-200">
+                 Our Commitment
+              </div>
+              <h2 className="text-5xl md:text-6xl font-bold text-black mb-10 leading-[1.1] tracking-tighter">
+                Ethical <span className="text-brand-sky underline decoration-sky-300 underline-offset-8">Consultancy</span>
+              </h2>
+              <div className="space-y-10">
+                {[
+                  { title: "Personalized Roadmap", text: "We don't believe in one-size-fits-all. Every student gets a custom career trajectory." },
+                  { title: "Transparency First", text: "End-to-end clarity on university choices, visa procedures, and financial planning." },
+                  { title: "Continuous Mentorship", text: "Our relationship doesn't end at admission; we support your integration abroad." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-6 group">
+                    <div className="flex-shrink-0 w-8 h-8 rounded bg-brand-navy flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <CheckCircle2 className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold mb-2 text-black">{item.title}</h4>
+                      <p className="text-slate-500 leading-relaxed text-sm">{item.text}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
-          
-          <div className="order-1 lg:order-2">
-             <div className="mb-6 inline-flex items-center px-4 py-1.5 rounded-full bg-white text-brand-navy text-[10px] font-bold uppercase tracking-[0.2em] border border-slate-200">
-               Our Commitment
+        </div>
+
+        {/* Engagement Gallery Section */}
+        <div className="max-w-7xl mx-auto mt-20">
+          <div className="grid grid-cols-12 gap-4 h-[500px]">
+            <div className="col-span-8 rounded-3xl overflow-hidden group relative shadow-2xl">
+              <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=2070&auto=format&fit=crop" alt="Campus environment" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
+                <p className="text-white font-bold tracking-tight">Vibrant Learning Culture</p>
+              </div>
             </div>
-            <h2 className="text-5xl md:text-6xl font-bold text-black mb-10 leading-[1.1] tracking-tighter">
-              Ethical <span className="text-brand-sky underline decoration-sky-300 underline-offset-8">Consultancy</span>
-            </h2>
-            <div className="space-y-10">
-              {[
-                { title: "Personalized Roadmap", text: "We don't believe in one-size-fits-all. Every student gets a custom career trajectory." },
-                { title: "Transparency First", text: "End-to-end clarity on university choices, visa procedures, and financial planning." },
-                { title: "Continuous Mentorship", text: "Our relationship doesn't end at admission; we support your integration abroad." }
-              ].map((item, i) => (
-                <div key={i} className="flex gap-6 group">
-                  <div className="flex-shrink-0 w-8 h-8 rounded bg-brand-navy flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <CheckCircle2 className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold mb-2 text-black">{item.title}</h4>
-                    <p className="text-slate-500 leading-relaxed text-sm">{item.text}</p>
-                  </div>
-                </div>
-              ))}
+            <div className="col-span-4 grid grid-rows-2 gap-4">
+              <div className="rounded-3xl overflow-hidden group shadow-xl">
+                 <img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b573?q=80&w=2070&auto=format&fit=crop" alt="Learning session" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
+              </div>
+              <div className="rounded-3xl overflow-hidden group shadow-xl">
+                 <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" alt="Graduation" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
+              </div>
             </div>
           </div>
         </div>
