@@ -36,12 +36,12 @@ export default function App() {
     <div className="min-h-screen bg-white overflow-x-hidden selection:bg-brand-navy selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-slate-100 bg-white/90 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-12 h-24 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-12 h-20 md:h-24 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center">
-              <span className="font-display font-bold text-xl text-white">A</span>
+            <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center">
+              <span className="font-display font-bold text-lg md:text-xl text-white">A</span>
             </div>
-            <span className="text-2xl font-black tracking-tighter text-brand-navy">AMYOB<span className="text-brand-sky underline decoration-4 underline-offset-4 ml-1">EDUCATION</span></span>
+            <span className="text-xl md:text-2xl font-black tracking-tighter text-brand-navy shrink-0">AMYOB<span className="text-brand-sky underline decoration-4 underline-offset-4 ml-1">EDUCATION</span></span>
           </div>
           
           <div className="hidden md:flex items-center gap-8">
@@ -72,39 +72,39 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-48 pb-24 px-12 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 items-center">
+      <section id="home" className="pt-32 md:pt-48 pb-16 md:pb-24 px-4 md:px-12 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-12 items-center gap-12 lg:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-7 pr-8"
+            className="lg:col-span-7 lg:pr-8"
           >
-            <div className="mb-6 inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-brand-navy text-xs font-bold uppercase tracking-widest border border-blue-100">
+            <div className="mb-6 inline-flex items-center px-4 py-1.5 rounded-full bg-blue-50 text-brand-navy text-[10px] md:text-xs font-bold uppercase tracking-widest border border-blue-100">
               <span className="w-2 h-2 rounded-full bg-brand-sky mr-2 animate-pulse"></span> India's Premier Education initiative
             </div>
-            <h1 className="text-6xl md:text-8xl font-bold leading-[0.9] text-black mb-8 tracking-tighter">
-              Navigate Your <br/> <span className="text-brand-blue tracking-tight">Global Future</span>
+            <h1 className="text-5xl md:text-8xl font-bold leading-[1.1] md:leading-[0.9] text-black mb-6 md:mb-8 tracking-tighter">
+              Navigate Your <br className="hidden md:block" /> <span className="text-brand-blue tracking-tight">Global Future</span>
             </h1>
-            <p className="max-w-xl text-slate-600 text-lg md:text-xl font-normal mb-10 leading-relaxed">
+            <p className="max-w-xl text-slate-600 text-base md:text-xl font-normal mb-8 md:mb-10 leading-relaxed">
               Specialized consultancy for Study Abroad, Career Pathing, and University Admissions. We bridge the gap between Indian ambition and global opportunities.
             </p>
-            <div className="flex flex-col sm:flex-row items-center gap-5">
-              <button className="btn-primary px-8 py-4 flex items-center gap-2 group">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-5">
+              <button className="btn-primary px-8 py-4 flex items-center justify-center gap-2 group">
                 GET STARTED <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
               <button className="btn-secondary px-8 py-4">Our Methodology</button>
             </div>
 
             {/* Stats Row */}
-            <div className="flex space-x-12 pt-12 mt-12 border-t border-slate-100">
+            <div className="flex flex-wrap gap-8 md:space-x-12 pt-10 md:pt-12 mt-10 md:mt-12 border-t border-slate-100">
               {[
                 { label: "Countries", value: "12+" },
                 { label: "Success Stories", value: "500+" },
                 { label: "Visa Approval", value: "98%" },
               ].map((stat, i) => (
                 <div key={i}>
-                  <div className="text-3xl font-black text-brand-navy tracking-tight">{stat.value}</div>
+                  <div className="text-2xl md:text-3xl font-black text-brand-navy tracking-tight">{stat.value}</div>
                   <div className="text-[10px] font-black text-slate-400 uppercase tracking-widest">{stat.label}</div>
                 </div>
               ))}
@@ -115,14 +115,14 @@ export default function App() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="lg:col-span-5 relative mt-20 lg:mt-0 p-8"
+            className="lg:col-span-5 relative p-4 md:p-8"
           >
-            <div className="relative aspect-square">
+            <div className="relative aspect-square max-w-md mx-auto lg:max-w-none">
               {/* Geometric Decorative Elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply opacity-50 blur-3xl"></div>
-              <div className="absolute bottom-10 left-0 w-72 h-72 bg-sky-100 rounded-3xl rotate-12 mix-blend-multiply opacity-50 blur-3xl"></div>
+              <div className="absolute top-0 right-0 w-32 md:w-64 h-32 md:h-64 bg-blue-100 rounded-full mix-blend-multiply opacity-50 blur-2xl md:blur-3xl"></div>
+              <div className="absolute bottom-10 left-0 w-36 md:w-72 h-36 md:h-72 bg-sky-100 rounded-3xl rotate-12 mix-blend-multiply opacity-50 blur-2xl md:blur-3xl"></div>
               
-              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
+              <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl border-4 md:border-8 border-white group">
                 <img 
                   src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop" 
                   alt="Students collaborating" 
@@ -132,11 +132,11 @@ export default function App() {
               </div>
 
               {/* Floating Badge */}
-              <div className="absolute -bottom-8 -right-8 bg-black text-white p-6 rounded-2xl shadow-2xl max-w-[200px]">
-                 <p className="text-[10px] font-bold uppercase tracking-[0.2em] mb-3 opacity-60">Success Rates</p>
-                 <div className="flex items-end gap-2">
-                    <span className="text-4xl font-black">98%</span>
-                    <span className="text-brand-sky text-xs font-bold mb-1">↑ Global</span>
+              <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 bg-black text-white p-4 md:p-6 rounded-xl md:rounded-2xl shadow-2xl max-w-[150px] md:max-w-[200px]">
+                 <p className="text-[8px] md:text-[10px] font-bold uppercase tracking-[0.2em] mb-2 md:mb-3 opacity-60">Success Rates</p>
+                 <div className="flex items-end gap-1 md:gap-2">
+                    <span className="text-2xl md:text-4xl font-black">98%</span>
+                    <span className="text-brand-sky text-[10px] md:text-xs font-bold mb-0.5 md:mb-1">↑ Global</span>
                  </div>
               </div>
             </div>
@@ -145,14 +145,14 @@ export default function App() {
       </section>
 
       {/* Feature Grid - Dark Mode Accent */}
-      <section id="programs" className="bg-black py-32 px-12">
+      <section id="programs" className="bg-black py-20 md:py-32 px-6 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16 text-center lg:text-left">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">Empowering <span className="text-brand-sky italic">Indian Excellence</span></h2>
-            <p className="text-slate-500 max-w-xl">Comprehensive support systems designed to transform academic potential into global achievement.</p>
+          <div className="mb-12 md:mb-16 text-center lg:text-left">
+            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Empowering <span className="text-brand-sky italic">Indian Excellence</span></h2>
+            <p className="text-slate-500 max-w-xl mx-auto lg:mx-0">Comprehensive support systems designed to transform academic potential into global achievement.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {services.map((service, i) => (
               <motion.div 
                 key={i}
@@ -173,11 +173,11 @@ export default function App() {
       </section>
 
       {/* Mission Section */}
-      <section id="mission" className="py-32 px-12 bg-slate-50">
-        <div className="max-w-7xl mx-auto border-b border-slate-200 pb-20 mb-20">
-          <div className="grid lg:grid-cols-2 gap-24 items-center">
-            <div className="relative order-2 lg:order-1">
-              <div className="aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl relative z-10">
+      <section id="mission" className="py-20 md:py-32 px-6 md:px-12 bg-slate-50">
+        <div className="max-w-7xl mx-auto border-b border-slate-200 pb-16 md:pb-20 mb-16 md:mb-20">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-24 items-center">
+            <div className="relative order-2 lg:order-1 max-w-lg mx-auto lg:max-w-none w-full">
+              <div className="aspect-[4/3] rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl relative z-10">
                 <img 
                   src="https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&q=80&w=1200" 
                   alt="Student collaboration" 
@@ -185,23 +185,23 @@ export default function App() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute inset-0 bg-brand-navy/10 rounded-3xl z-20"></div>
+              <div className="absolute inset-0 bg-brand-navy/10 rounded-2xl md:rounded-3xl z-20"></div>
             </div>
             
             <div className="order-1 lg:order-2">
                <div className="mb-6 inline-flex items-center px-4 py-1.5 rounded-full bg-white text-brand-navy text-[10px] font-bold uppercase tracking-[0.2em] border border-slate-200">
                  Our Commitment
               </div>
-              <h2 className="text-5xl md:text-6xl font-bold text-black mb-10 leading-[1.1] tracking-tighter">
+              <h2 className="text-4xl md:text-6xl font-bold text-black mb-8 md:mb-10 leading-[1.1] tracking-tighter">
                 Ethical <span className="text-brand-sky underline decoration-sky-300 underline-offset-8">Consultancy</span>
               </h2>
-              <div className="space-y-10">
+              <div className="space-y-8 md:space-y-10">
                 {[
                   { title: "Personalized Roadmap", text: "We don't believe in one-size-fits-all. Every student gets a custom career trajectory." },
                   { title: "Transparency First", text: "End-to-end clarity on university choices, visa procedures, and financial planning." },
                   { title: "Continuous Mentorship", text: "Our relationship doesn't end at admission; we support your integration abroad." }
                 ].map((item, i) => (
-                  <div key={i} className="flex gap-6 group">
+                  <div key={i} className="flex gap-4 md:gap-6 group">
                     <div className="flex-shrink-0 w-8 h-8 rounded bg-brand-navy flex items-center justify-center group-hover:scale-110 transition-transform">
                       <CheckCircle2 className="w-5 h-5 text-white" />
                     </div>
@@ -217,19 +217,19 @@ export default function App() {
         </div>
 
         {/* Engagement Gallery Section */}
-        <div className="max-w-7xl mx-auto mt-20">
-          <div className="grid grid-cols-12 gap-4 h-[500px]">
-            <div className="col-span-8 rounded-3xl overflow-hidden group relative shadow-2xl">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-4 h-auto md:h-[500px]">
+            <div className="col-span-1 md:col-span-8 h-[300px] md:h-full rounded-2xl md:rounded-3xl overflow-hidden group relative shadow-xl md:shadow-2xl">
               <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?q=80&w=2070&auto=format&fit=crop" alt="Campus environment" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" referrerPolicy="no-referrer" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-                <p className="text-white font-bold tracking-tight">Vibrant Learning Culture</p>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 md:p-8">
+                <p className="text-white font-bold tracking-tight text-lg">Vibrant Learning Culture</p>
               </div>
             </div>
-            <div className="col-span-4 grid grid-rows-2 gap-4">
-              <div className="rounded-3xl overflow-hidden group shadow-xl">
+            <div className="col-span-1 md:col-span-4 grid grid-cols-2 md:grid-cols-1 md:grid-rows-2 gap-4">
+              <div className="rounded-2xl md:rounded-3xl overflow-hidden group shadow-lg md:shadow-xl aspect-square md:aspect-auto">
                  <img src="https://images.unsplash.com/photo-1524178232363-1fb28f74b573?q=80&w=2070&auto=format&fit=crop" alt="Learning session" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
               </div>
-              <div className="rounded-3xl overflow-hidden group shadow-xl">
+              <div className="rounded-2xl md:rounded-3xl overflow-hidden group shadow-lg md:shadow-xl aspect-square md:aspect-auto">
                  <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop" alt="Graduation" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" referrerPolicy="no-referrer" />
               </div>
             </div>
@@ -238,46 +238,46 @@ export default function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-32 px-12">
+      <section id="contact" className="py-20 md:py-32 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-3xl shadow-2xl border border-slate-100 overflow-hidden grid lg:grid-cols-2">
-            <div className="p-16 flex flex-col justify-between">
+          <div className="bg-white rounded-2xl md:rounded-3xl shadow-2xl border border-slate-100 overflow-hidden grid lg:grid-cols-2">
+            <div className="p-8 md:p-16 flex flex-col justify-between">
               <div>
-                <h2 className="text-5xl font-bold text-black mb-8 tracking-tighter">Connect with <br /><span className="text-brand-blue">Excellence.</span></h2>
-                <p className="text-slate-500 mb-12 max-w-sm">Start your transformation today. Our consultants are ready to guide your next move.</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-black mb-6 md:mb-8 tracking-tighter">Connect with <br /><span className="text-brand-blue">Excellence.</span></h2>
+                <p className="text-slate-500 mb-8 md:mb-12 max-w-sm">Start your transformation today. Our consultants are ready to guide your next move.</p>
                 
-                <div className="space-y-8">
-                  <div className="flex items-center gap-6 group">
-                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-brand-navy transition-colors">
+                <div className="space-y-6 md:space-y-8">
+                  <div className="flex items-center gap-4 md:gap-6 group">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-brand-navy transition-colors shrink-0">
                       <Mail className="w-5 h-5 text-brand-navy group-hover:text-white" />
                     </div>
                     <div>
                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Email Us</div>
-                      <div className="text-brand-navy font-bold">hello@amyob.india</div>
+                      <div className="text-brand-navy font-bold text-sm md:text-base">hello@amyob.india</div>
                     </div>
                   </div>
-                  <div className="flex items-center gap-6 group">
-                    <div className="w-12 h-12 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-brand-navy transition-colors">
+                  <div className="flex items-center gap-4 md:gap-6 group">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 rounded-xl flex items-center justify-center group-hover:bg-brand-navy transition-colors shrink-0">
                       <Phone className="w-5 h-5 text-brand-navy group-hover:text-white" />
                     </div>
                     <div>
                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Call Expert</div>
-                      <div className="text-brand-navy font-bold">+91 1800 200 300</div>
+                      <div className="text-brand-navy font-bold text-sm md:text-base">+91 1800 200 300</div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-slate-50 p-16 border-l border-slate-100">
-               <form className="space-y-6">
+            <div className="bg-slate-50 p-8 md:p-16 border-t lg:border-t-0 lg:border-l border-slate-100">
+               <form className="space-y-5 md:space-y-6">
                  <div>
-                    <label className="block text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-3">Full Name</label>
-                    <input type="text" className="w-full bg-white border border-slate-200 rounded-xl h-14 px-5 focus:border-brand-navy outline-none transition-colors" placeholder="Ex: Rahul Sharma" />
+                    <label className="block text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-2 md:mb-3">Full Name</label>
+                    <input type="text" className="w-full bg-white border border-slate-200 rounded-xl h-12 md:h-14 px-5 focus:border-brand-navy outline-none transition-colors" placeholder="Ex: Rahul Sharma" />
                  </div>
                  <div>
-                    <label className="block text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-3">Target Country</label>
-                    <select className="w-full bg-white border border-slate-200 rounded-xl h-14 px-5 focus:border-brand-navy outline-none transition-colors appearance-none">
+                    <label className="block text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-2 md:mb-3">Target Country</label>
+                    <select className="w-full bg-white border border-slate-200 rounded-xl h-12 md:h-14 px-5 focus:border-brand-navy outline-none transition-colors appearance-none">
                       <option>Select Destination</option>
                       <option>United Kingdom</option>
                       <option>United States</option>
@@ -286,10 +286,10 @@ export default function App() {
                     </select>
                  </div>
                  <div>
-                    <label className="block text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-3">Brief Inquiry</label>
-                    <textarea className="w-full bg-white border border-slate-200 rounded-xl h-32 p-5 focus:border-brand-navy outline-none transition-colors" placeholder="Tell us about your background..." />
+                    <label className="block text-[10px] uppercase tracking-widest text-slate-500 font-bold mb-2 md:mb-3">Brief Inquiry</label>
+                    <textarea className="w-full bg-white border border-slate-200 rounded-xl h-24 md:h-32 p-5 focus:border-brand-navy outline-none transition-colors resize-none" placeholder="Tell us about your background..." />
                  </div>
-                 <button className="btn-primary w-full py-5 text-xs font-black tracking-widest">SCHEDULE NOW</button>
+                 <button className="btn-primary w-full py-4 md:py-5 text-xs font-black tracking-widest">SCHEDULE NOW</button>
                </form>
             </div>
           </div>
@@ -297,9 +297,9 @@ export default function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
-        <div className="mb-4 md:mb-0">&copy; 2026 AMYOB EDUCATION INDIA</div>
-        <div className="flex space-x-12 mb-4 md:mb-0">
+      <footer className="py-10 md:py-12 px-6 md:px-12 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] gap-8 md:gap-0 text-center md:text-left">
+        <div className="mb-0">&copy; 2026 AMYOB EDUCATION INDIA</div>
+        <div className="flex flex-wrap justify-center gap-8 md:space-x-12">
           <span className="hover:text-brand-navy transition-colors cursor-pointer">Facebook</span>
           <span className="hover:text-brand-navy transition-colors cursor-pointer">Instagram</span>
           <span className="hover:text-brand-navy transition-colors cursor-pointer">LinkedIn</span>
