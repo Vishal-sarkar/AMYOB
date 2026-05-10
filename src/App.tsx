@@ -40,7 +40,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center">
               <img 
-                src="./Logo.png" 
+                src="/Logo.png" 
                 alt="AMYOB Logo" 
                 className="w-full h-full object-contain "
               />
