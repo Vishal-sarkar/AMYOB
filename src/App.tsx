@@ -36,18 +36,23 @@ export default function App() {
     <div className="min-h-screen bg-white overflow-x-hidden selection:bg-brand-navy selection:text-white">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 border-b border-slate-100 bg-white/90 backdrop-blur-md">
-        <div className="max-w-7xl mx-auto px-4 md:px-12 h-20 md:h-24 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 md:px-12 lg:px-0 h-20 md:h-24 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center">
-              <span className="font-display font-bold text-lg md:text-xl text-white">A</span>
+            <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center">
+              <img 
+                src="./Logo.png" 
+                alt="AMYOB Logo" 
+                className="w-full h-full object-contain "
+              />
             </div>
-            <span className="text-xl md:text-2xl font-black tracking-tighter text-brand-navy shrink-0">AMYOB<span className="text-brand-sky underline decoration-4 underline-offset-4 ml-1">EDUCATION</span></span>
+            <span className="text-xl md:text-2xl font-black tracking-tighter text-brand-navy shrink-0">AMYOB<span className="text-brand-sky underline decoration-4 underline-offset-4 ml-1"></span></span>
           </div>
           
           <div className="hidden md:flex items-center gap-8">
             <a href="#programs" className="nav-link text-brand-navy">Services</a>
             <a href="#mission" className="nav-link">Mission</a>
             <a href="#articles" className="nav-link">Articles</a>
+            <a href="#gallery" className="nav-link">Gallery</a>
             <a href="#contact" className="nav-link">Contact</a>
             <button className="btn-primary">Free Consultation</button>
           </div>
@@ -67,6 +72,7 @@ export default function App() {
             <a href="#programs" onClick={() => setIsMenuOpen(false)} className="nav-link text-lg">Services</a>
             <a href="#mission" onClick={() => setIsMenuOpen(false)} className="nav-link text-lg">Mission</a>
             <a href="#articles" onClick={() => setIsMenuOpen(false)} className="nav-link text-lg">Articles</a>
+            <a href="#gallery" onClick={() => setIsMenuOpen(false)} className="nav-link text-lg">Gallery</a>
             <a href="#contact" onClick={() => setIsMenuOpen(false)} className="nav-link text-lg">Contact</a>
             <button className="btn-primary w-full">Free Consultation</button>
           </motion.div>
@@ -74,7 +80,7 @@ export default function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-32 md:pt-48 pb-16 md:pb-24 px-4 md:px-12 relative overflow-hidden">
+      <section id="home" className="pt-32 md:pt-48 pb-16 md:pb-24 px-4 md:px-12 relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-sky-50">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-12 items-center gap-12 lg:gap-8">
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -86,7 +92,7 @@ export default function App() {
               <span className="w-2 h-2 rounded-full bg-brand-sky mr-2 animate-pulse"></span> Registered Under Section 25, Indian Companies Act 1956
             </div>
             <h1 className="text-5xl md:text-8xl font-bold leading-[1.1] md:leading-[0.9] text-black mb-6 md:mb-8 tracking-tighter">
-              Always Mind Your <br className="hidden md:block" /> <span className="text-brand-blue tracking-tight">Own Business</span>
+              AMYOB <br className="hidden md:block" /> <span className="text-brand-blue tracking-tight">Education</span>
               <span className="block text-2xl md:text-3xl mt-4 text-slate-400 font-medium tracking-normal">India is Great</span>
             </h1>
             <p className="max-w-xl text-slate-600 text-base md:text-xl font-normal mb-8 md:mb-10 leading-relaxed italic">
@@ -438,6 +444,54 @@ export default function App() {
         </div>
       </section>
 
+      {/* Gallery Section */}
+      <section id="gallery" className="py-20 md:py-32 px-6 md:px-12 bg-gradient-to-br from-blue-50 via-sky-50 to-blue-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="mb-4 inline-flex items-center px-4 py-1.5 rounded-full bg-slate-50 text-brand-navy text-[10px] font-bold uppercase tracking-widest border border-slate-100">
+              Moments of Impact
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold text-black tracking-tighter">Our <span className="text-brand-blue">Gallery</span></h2>
+            <p className="mt-4 text-slate-500 max-w-2xl mx-auto">Glimpses of our ongoing initiatives, community gatherings, and the smiles we strive to protect.</p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div className="grid gap-4">
+              <div className="rounded-2xl overflow-hidden group">
+                <img className="h-auto max-w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80&w=800" alt="Community gathering" />
+              </div>
+              <div className="rounded-2xl overflow-hidden group">
+                <img className="h-auto max-w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=800" alt="Education initiative" />
+              </div>
+            </div>
+            <div className="grid gap-4">
+              <div className="rounded-2xl overflow-hidden group">
+                <img className="h-auto max-w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&q=80&w=800" alt="Cleanliness drive" />
+              </div>
+              <div className="rounded-2xl overflow-hidden group">
+                <img className="h-auto max-w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" alt="Teaching students" />
+              </div>
+            </div>
+            <div className="grid gap-4">
+              <div className="rounded-2xl overflow-hidden group">
+                <img className="h-auto max-w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Yoga session" />
+              </div>
+              <div className="rounded-2xl overflow-hidden group">
+                <img className="h-auto max-w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1594708767771-a7502209ff51?auto=format&fit=crop&q=80&w=800" alt="Awareness campaign" />
+              </div>
+            </div>
+            <div className="grid gap-4">
+              <div className="rounded-2xl overflow-hidden group">
+                <img className="h-auto max-w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=800" alt="Students reading" />
+              </div>
+              <div className="rounded-2xl overflow-hidden group">
+                <img className="h-auto max-w-full rounded-2xl object-cover transition-transform duration-700 group-hover:scale-110" src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&q=80&w=800" alt="Seminar group" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 md:py-32 px-4 md:px-12">
         <div className="max-w-7xl mx-auto">
@@ -464,8 +518,7 @@ export default function App() {
                     </div>
                     <div className="space-y-1">
                       <div className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">Call Expert</div>
-                      <div className="text-brand-navy font-bold text-sm md:text-base">09415347010</div>
-                      <div className="text-brand-navy font-bold text-sm md:text-base">08004923343</div>
+                      <div className="text-brand-navy font-bold text-sm md:text-base">9311017632</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4 md:gap-6 group">
@@ -525,7 +578,7 @@ export default function App() {
               <div className="w-8 h-8 bg-brand-navy rounded flex items-center justify-center">
                 <span className="text-white font-bold">A</span>
               </div>
-              <span className="font-black text-brand-navy">AMYOB EDUCATION</span>
+              <span className="font-black text-brand-navy">AMYOB Education</span>
             </div>
             <p className="text-slate-500 text-sm leading-relaxed mb-6">
               Empowering India through Awakening, Employment creation, and the Eradication of illiteracy.
@@ -557,7 +610,7 @@ export default function App() {
           </div>
         </div>
         <div className="max-w-7xl mx-auto pt-12 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em] gap-4">
-          <div>&copy; 2026 AMYOB EDUCATION INDIA. All Rights Reserved.</div>
+          <div>&copy; 2026 AMYOB Education India. All Rights Reserved.</div>
           <div className="flex gap-8">
             <span>Privacy Policy</span>
             <span>Terms of Service</span>
